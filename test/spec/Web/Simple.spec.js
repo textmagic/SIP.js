@@ -28,6 +28,7 @@ describe('Web/Simple', function() {
       displayName: undefined,
       password: undefined,
       register: true,
+      registerExpires: undefined,
       sessionDescriptionHandlerFactoryOptions: {
       },
       uri: 'bob@example.com',
@@ -37,7 +38,7 @@ describe('Web/Simple', function() {
         wsServers: ['wss://sip-ws.example.com'],
         traceSip: undefined
       }
-    }
+    };
 
     // FIXME: phantomjs is detected as safari!
     var browserUa = navigator.userAgent.toLowerCase();

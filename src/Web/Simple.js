@@ -90,6 +90,7 @@ var Simple = function (options) {
     userAgentString:   this.options.ua.userAgentString,
     // Fixed Options
     register:          true,
+    registerExpires:   this.options.ua.registerExpires,
     sessionDescriptionHandlerFactoryOptions: sessionDescriptionHandlerFactoryOptions,
     transportOptions: {
       traceSip: this.options.ua.traceSip,

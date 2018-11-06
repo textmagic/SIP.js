@@ -67,7 +67,14 @@ var Simple = function (options) {
   } else if (browserUa.indexOf('firefox') > -1 && browserUa.indexOf('chrome') < 0) {
     isFirefox = true;
   }
-  var sessionDescriptionHandlerFactoryOptions = {};
+  var sessionDescriptionHandlerFactoryOptions = {
+      constraints: {},
+      peerConnectionOptions:{
+          rtcConfiguration: {
+              iceCandidatePoolSize: 5
+          }
+      }
+  };
   if (isSafari) {
     sessionDescriptionHandlerFactoryOptions.modifiers = [SIP.Web.Modifiers.stripG722];
   }

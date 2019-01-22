@@ -71,12 +71,12 @@ var Simple = function (options) {
       constraints: {},
       peerConnectionOptions:{
           rtcConfiguration: {
-              iceCandidatePoolSize: 5,
-              iceServers: [{
-                  urls: ["turn:149.202.82.181:5349?transport=tcp"],
-                  username: "username1",
-                  credential: "key1"
-              }]
+              //iceCandidatePoolSize: 5,
+              //iceServers: [{
+              //    urls: ["turn:149.202.82.181:5349?transport=tcp"],
+              //    username: "username1",
+              //    credential: "key1"
+              //}]
           }
       }
   };

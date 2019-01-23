@@ -71,15 +71,16 @@ var Simple = function (options) {
       constraints: {},
       peerConnectionOptions:{
           rtcConfiguration: {
-              //iceCandidatePoolSize: 5,
-              //iceServers: [{
-              //    urls: ["turn:149.202.82.181:5349?transport=tcp"],
-              //    username: "username1",
-              //    credential: "key1"
-              //}]
+              iceTransportPolicy:"all",
+              iceCandidatePoolSize:"0",
+              iceServers: [
+                  {"urls":["turn:149.202.82.181:5349"],"username":"username1","credential":"key1"},
+                  {"urls":["stun:149.202.82.181:3478"],"username":"","credential":""}
+              ]
           }
       }
   };
+
   if (isSafari) {
     sessionDescriptionHandlerFactoryOptions.modifiers = [SIP.Web.Modifiers.stripG722];
   }

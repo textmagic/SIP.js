@@ -1,6 +1,6 @@
 /*!
  * 
- *  SIP version 0.11.9
+ *  SIP version 0.11.10
  *  Copyright (c) 2014-2019 Junction Networks, Inc <http://www.onsip.com>
  *  Homepage: https://sipjs.com
  *  License: https://sipjs.com/license/
@@ -207,7 +207,7 @@ module.exports = function (environment) {
 /* 2 */
 /***/ (function(module) {
 
-module.exports = {"name":"sip.js","title":"SIP.js","description":"A simple, intuitive, and powerful JavaScript signaling library","version":"0.11.9","main":"dist/sip.js","browser":{"./src/environment.js":"./src/environment_browser.js"},"homepage":"https://sipjs.com","author":"OnSIP <developer@onsip.com> (https://sipjs.com/aboutus/)","contributors":[{"url":"https://github.com/onsip/SIP.js/blob/master/THANKS.md"}],"repository":{"type":"git","url":"https://github.com/onsip/SIP.js.git"},"keywords":["sip","websocket","webrtc","library","javascript"],"devDependencies":{"babel-core":"^6.26.0","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","eslint":"^4.9.0","jasmine-core":"^3.1.0","karma":"^2.0.2","karma-chrome-launcher":"^2.2.0","karma-cli":"^1.0.1","karma-jasmine":"^1.1.0","karma-jasmine-html-reporter":"^1.2.0","karma-mocha-reporter":"^2.2.5","karma-webpack":"^3.0.0","pegjs":"^0.10.0","pegjs-loader":"^0.5.4","uglifyjs-webpack-plugin":"^1.2.5","webpack":"^4.16.0","webpack-cli":"^3.0.8"},"engines":{"node":">=6.0"},"license":"MIT","scripts":{"prebuild":"eslint src/*.js src/**/*.js","build-dev":"webpack --progress --env.buildType dev","build-prod":"webpack --progress --env.buildType prod","copy-dist-files":"cp dist/sip.js dist/sip-$npm_package_version.js && cp dist/sip.min.js  dist/sip-$npm_package_version.min.js","build":"npm run build-dev && npm run build-prod && npm run copy-dist-files","browserTest":"sleep 2 && open http://0.0.0.0:9876/debug.html & karma start --reporters kjhtml --no-single-run","commandLineTest":"karma start --reporters mocha --browsers ChromeHeadless --single-run","buildAndTest":"npm run build && npm run commandLineTest","buildAndBrowserTest":"npm run build && npm run browserTest"},"dependencies":{"crypto-js":"^3.1.9-1"},"optionalDependencies":{"promiscuous":"^0.6.0"}};
+module.exports = {"name":"sip.js","title":"SIP.js","description":"A simple, intuitive, and powerful JavaScript signaling library","version":"0.11.10","main":"dist/sip.js","browser":{"./src/environment.js":"./src/environment_browser.js"},"homepage":"https://sipjs.com","author":"OnSIP <developer@onsip.com> (https://sipjs.com/aboutus/)","contributors":[{"url":"https://github.com/onsip/SIP.js/blob/master/THANKS.md"}],"repository":{"type":"git","url":"https://github.com/onsip/SIP.js.git"},"keywords":["sip","websocket","webrtc","library","javascript"],"devDependencies":{"babel-core":"^6.26.0","babel-loader":"^7.1.2","babel-preset-env":"^1.6.1","eslint":"^4.9.0","jasmine-core":"^3.1.0","karma":"^2.0.2","karma-chrome-launcher":"^2.2.0","karma-cli":"^1.0.1","karma-jasmine":"^1.1.0","karma-jasmine-html-reporter":"^1.2.0","karma-mocha-reporter":"^2.2.5","karma-webpack":"^3.0.0","pegjs":"^0.10.0","pegjs-loader":"^0.5.4","uglifyjs-webpack-plugin":"^1.2.5","webpack":"^4.16.0","webpack-cli":"^3.0.8"},"engines":{"node":">=6.0"},"license":"MIT","scripts":{"prebuild":"eslint src/*.js src/**/*.js","build-dev":"webpack --progress --env.buildType dev","build-prod":"webpack --progress --env.buildType prod","copy-dist-files":"cp dist/sip.js dist/sip-$npm_package_version.js && cp dist/sip.min.js  dist/sip-$npm_package_version.min.js","build":"npm run build-dev && npm run build-prod && npm run copy-dist-files","browserTest":"sleep 2 && open http://0.0.0.0:9876/debug.html & karma start --reporters kjhtml --no-single-run","commandLineTest":"karma start --reporters mocha --browsers ChromeHeadless --single-run","buildAndTest":"npm run build && npm run commandLineTest","buildAndBrowserTest":"npm run build && npm run browserTest"},"dependencies":{"crypto-js":"^3.1.9-1"},"optionalDependencies":{"promiscuous":"^0.6.0"}};
 
 /***/ }),
 /* 3 */
@@ -13187,8 +13187,8 @@ module.exports = function (SIP) {
       peerConnectionOptions: {
         rtcConfiguration: {
           iceTransportPolicy: "all",
-          iceCandidatePoolSize: "0",
-          iceServers: [{ "urls": ["turn:149.202.82.181:5349"], "username": "username1", "credential": "key1" }, { "urls": ["stun:149.202.82.181:3478"], "username": "", "credential": "" }]
+          iceCandidatePoolSize: 10,
+          iceServers: [{ "urls": ["turn:149.202.82.181:5349?transport=udp"], "username": "username1", "credential": "key1" }, { "urls": ["stun:149.202.82.181:3478"], "username": "", "credential": "" }]
         }
       }
     };

@@ -73,10 +73,7 @@ var Simple = function (options) {
           rtcConfiguration: {
               iceTransportPolicy:"all",
               iceCandidatePoolSize: 10,
-              iceServers: [
-                  {"urls":["turn:149.202.82.181:5349?transport=udp"],"username":"username1","credential":"key1"},
-                  {"urls":["stun:149.202.82.181:3478"],"username":"","credential":""}
-              ]
+              iceServers: []
           }
       }
   };

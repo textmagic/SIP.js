@@ -73,9 +73,7 @@ var Simple = function (options) {
           rtcConfiguration: {
               iceTransportPolicy:"all",
               iceCandidatePoolSize: 10,
-              iceServers: [{
-                  urls: ["stun:sipnet.ru:3478"],
-              }]
+              iceServers: []
           }
       }
   };

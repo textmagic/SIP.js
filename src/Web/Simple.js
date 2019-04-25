@@ -73,7 +73,9 @@ var Simple = function (options) {
           rtcConfiguration: {
               iceTransportPolicy:"all",
               iceCandidatePoolSize: 10,
-              iceServers: []
+              iceServers: [{
+                  urls: ["stun:stun.voipcheap.co.uk:3478"]
+              }]
           }
       }
   };
